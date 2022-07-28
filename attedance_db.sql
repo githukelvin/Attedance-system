@@ -43,14 +43,6 @@ CREATE TABLE `attendee` (
 -- Dumping data for table `attendee`
 --
 
-INSERT INTO `attendee` (`Attendee_id`, `firstname`, `lastname`, `dateofbirth`, `phone_number`, `Email_address`, `PASS`, `Avatar`, `Category`) VALUES
-(1, 'molly', 'maseno', '0000-00-00', '0729674563', 'masenomolly1@gmail.com', '123', '', 1),
-(2, 'rob', 'okoth', '2020-12-03', '0792783657', 'robokoth@gmail.com', '1q23', '', 1),
-(3, 'john', 'maina', '2002-12-08', '0758206444', 'kelvingithu019@gmaiol.com', 'nsadu', '132 California', 1),
-(6, 'peter', 'kihoi', '2003-08-12', '073545432', 'peter@gmail.com', '123', 'westi', 2),
-(7, 'taylor', 'mayor', '2006-07-01', '071234567', 'taylor@gmail.com', '1234', '021 LA', 1),
-(14, 'timothy', 'muthama', '1951-07-04', '0723440442', 'muthama@gmail.com', '1234r', '231 st jonhs', 2),
-(15, 'timo', 'nganga', '2003-01-01', '0723377277', 'timo@kimonyoski.com', '123', '21 rongai', 2);
 
 -- --------------------------------------------------------
 
