@@ -3,7 +3,8 @@ include './database/database.php' ;
 $carts = $crud->getcategory();
 
 if (!isset($_GET['id'])){
-    echo "<h1>Error occured</h1>";
+    // echo "<h1>Error occured</h1>";
+    include './includes/error.php';
 }
 else{
     $id=$_GET['id'];

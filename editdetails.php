@@ -4,7 +4,7 @@
    
 //   echo $_POST['attend'];
 
-if (isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     //extract values in form in array
     $id =$_POST['attend'];
     $fname = $_POST['first_name'];
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
     if ($result) {
         header(' Location: viewlist.php');
     } else {
-       echo"<h1>ERROR OCURRED RETRY</h1>";
+        include './includes/error.php';
     //    header('Location: signin.php ');
     }
 }

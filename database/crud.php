@@ -65,33 +65,67 @@ class crud
 
       }
       }
+      // FUNCTION TO DELETE 
+
+      public function delete($id){
+        try{
+          $sql ="DELETE FROM `attendee` WHERE Attendee_id = :id";
+          $stmt=$this->db->prepare($sql);
+          $stmt->bindparam(':id',$id);
+          $stmt->execute();
+          return true;
+        }catch(PDOException $e){
+         echo  $e->getMessage();
+         return false;
+            
+        }
+   
+
+      }
       public function getID($id){
-        $sql = "SELECT * FROM `attendee` a inner join category s on a.Category = s.category_id WHERE Attendee_id = :id";
-        $stmt= $this->db->prepare($sql);
+                try {
+                    $sql = "SELECT * FROM `attendee` a inner join category s on a.Category = s.category_id WHERE Attendee_id = :id";
+                    $stmt= $this->db->prepare($sql);
 
-        $stmt->bindparam(':id',$id);
-       
+                    $stmt->bindparam(':id', $id);
+                      
 
 
-         $stmt->execute();
-         $result = $stmt->fetch();
-        return $result;
+                    $stmt->execute();
+                    $result = $stmt->fetch();
+                    return $result;
+                }catch(PDOException $e){
+                  echo  $e->getMessage();
+                  return false;
+                    
+                }
       }
 // this  function below  is for  querying results from a database  i mean viewing databse records 
 
       public function getAttendees(){
-
-        $sql = "SELECT * FROM `attendee` a inner join category s on a.Category = s.category_id;";
-        $result = $this->db->query($sql);
-        return $result;
+        try{
+              $sql = "SELECT * FROM `attendee` a inner join category s on a.Category = s.category_id;";
+              $result = $this->db->query($sql);
+              return $result;
+          }catch(PDOException $e){
+                    echo  $e->getMessage();
+                    return false;
+                      
+         }
 
       }
       public function getcategory(){
-
-        $sql = "SELECT * FROM `category`;";
-        $cart = $this->db->query($sql);
-        return $cart;
-
+        try{
+          $sql = "SELECT * FROM `category`;";
+          $cart = $this->db->query($sql);
+          return $cart;
+  
+        }catch(PDOException $e){
+          echo  $e->getMessage();
+          return false;
+             
+         }
+        
       }
    
 }

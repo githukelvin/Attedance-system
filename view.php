@@ -5,7 +5,8 @@ include  'includes/header.php';
 
   
   if (!isset($_GET['id'])){
-    echo "<h1>Please check details</h1>";
+    include './includes/error.php';
+    header('location: viewlist.php');
   }
   else{
     $id = $_GET['id'];
@@ -25,6 +26,11 @@ include  'includes/header.php';
 
 </div>
 
-
+ <div class="btns" style="margin: 1rem auto; width:fit-content;">
+ <a class="btn"  style="background-color: #1E2A78 ; color:#fff; text-align:center; border-radius:8px; padding:.5rem; width:fit-content; font-size:18px;" href="viewlist.php">Go Back</a>
+        <a class="btn update" style="background-color: #B6FFCE ;padding:.5rem; width:fit-content;border-radius:8px; text-align:center; color:#354259;font-size:18px;" href="update.php?id=<?php echo $result["Attendee_id"];?>">Update</a>
+        <a class="btn delete" onclick="return confirm('Confirm you want to delete  this record')" style="background-color: #FF6363 ;padding:.5rem; width:fit-content;border-radius:8px; font-size:18px; color:#F7ECDE; "href="delete.php?id=<?php echo $result["Attendee_id"];?>">Delete</a>
+ </div>       
+            
 <?php } ?>
 <?php  include 'includes/footer.php'?>

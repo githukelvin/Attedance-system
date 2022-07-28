@@ -8,18 +8,18 @@ require_once './database/database.php';
 <h1 class="reg">Registration For Student/Lecturer</h1>
 
 <div class="container form__container">
-    <form action="success.php" class="form" enctype="multipart/form-data" method="post">
+    <form action="success.php" class="form" encrequired type="multipart/form-data" method="post">
     <div class="form-group">
             <label for="first_name">First Name</label><br>
-            <input type="text" name="first_name" placeholder="Enter Your First Name" id="first_name">
+            <input required type="text" name="first_name" placeholder="Enter Your First Name" id="first_name">
         </div>
         <div class="form-group">
             <label for="last_name"> Last Name </label><br>
-            <input type="text" name="last_name" placeholder="Enter Your last Name" id="last_name">
+            <input required type="text" name="last_name" placeholder="Enter Your last Name" id="last_name">
         </div>
         <div class="form-group">
             <label for="datepicker">Enter Your D.O.B</label><br>
-            <input type="text" name="date" placeholder="Format yy/mm/dd" id="datepicker">
+            <input  type="text" name="date" placeholder="Format yy/mm/dd" id="datepicker">
         </div>
         <div class="form-group">
             <label for="select">Select Who you are</label><br>
@@ -33,28 +33,28 @@ require_once './database/database.php';
         <div class="form-group">
             <label for="number">Enter Your Phone Number</label><br>
        
-            <input type="text" name="number" placeholder="Enter Your Phone" id="number">
+            <input  type="text" name="number" placeholder="Enter Your Phone" id="number">
         </div>
         <div class="form-group">
             <label for="email">Enter Your Email</label><br>
-            <input type="email" name="email" placeholder="Enter Your Email" id="email">
+            <input required type="email" name="email" placeholder="Enter Your Email" id="email">
         </div>
         <div class="form-group">
             <label for="pass">Enter Password</label><br>
-            <input type="password" name="pass1" placeholder="Enter Password" id="pass">
+            <input required type="password" name="pass1" placeholder="Enter Password" id="pass">
         </div>
         <div class="form-group">
             <label for="pass">Confirm Password</label><br>
-            <input type="password" name="pass2" placeholder="Retype Password" id="pass1">
+            <input required type="password" name="pass2" placeholder="Re-type Password" id="pass1">
         </div>
         <div class="form-group">
             <label for="avatar">Enter Address</label></label><br>
-          <input type="text" name="avatar" id="avatar">
+          <input  type="text" name="avatar" id="avatar">
         </div>
         <div class="forgot">
         <small>Already have an account <a href="./signin.php">Sign In</a></small>
         </div>
-        <button class="btn" type="submit" name="submit">Register</button>
+        <button class="btn" required type="submit" name="submit">Register</button>
     </form>
     
 
