@@ -26,11 +26,18 @@
         <nav class="container nav__container">
         <div><h1 class="logo"><a href="index.php">ATTENDANCE SYSTEM</a></h1></div>
             <ul class="nav__container-list">
-                <li><a href="<?php echo 'http://localhost/Attedance/'?>index.php">home</a></li>
-                <li><a href="<?php echo 'http://localhost/Attedance/'?>about.php">about</a></li>
+                <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>index.php">home</a></li> -->
+                <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>about.php">about</a></li> -->
                 <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>services.php">services</a></li> -->
-                <li><a href="<?php echo 'http://localhost/Attedance/'?>contact.php">contact</a></li>
-                <li><a href="<?php echo 'http://localhost/Attedance/'?>signin.php">signin</a></li>
+                <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>contact.php">contact</a></li> -->
+                <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>signin.php">signin</a></li> -->
+                
+
+                <li><a href="index.php">home</a></li>
+                <li><a href="about.php">about</a></li>
+                <!-- <li><a href="services.php">services</a></li> -->
+                <li><a href="contact.php">contact</a></li>
+                <li><a href="signin.php">signin</a></li>
             </ul>
         </nav>
     </header>
