@@ -3,6 +3,7 @@
 @import 'viewlist';
 @import 'menu';
 @import 'card';
+@import './aside';
 
 
 
@@ -64,4 +65,15 @@ header{
         border-top: 20px solid #42eadc;
         border-right: 20px solid #42eadc;
     }
+    aside{
+        width: 20rem;
+       height: 30rem;
+       background:#2b2d42;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      
+      
+      }
 }

@@ -39,12 +39,48 @@ class crud
 
             }
       }
+      // FUNCTION TO PUSH DATA FORM SIGNING NOMINAL ROLL\
+      public function insertsigned($course_id, $course,$term,$course_yr,$comments){
+        try{
+          $sql = "INSERT INTO signed(course_id, course, term, course_yr,comments) VALUES (:courseid,:course,:term,:courseyr,:comments);";
+          $stmt = $this->db->prepare($sql);
+
+          $stmt->bindparam(':courseid',$course_id);
+          $stmt->bindparam(':course',$course);
+          $stmt->bindparam(':term',$term);
+          $stmt->bindparam(':courseyr',$course_yr);
+          $stmt->bindparam(':comments',$comments);
+
+          $stmt->execute();
+          return true;
+        }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+        }
+
+      }
+
+        // FUNCTION GET SIGNED STUDENT 
+        public function getsigned(){
+          try{
+            $sql = "SELECT * FROM signed ;";
+            $results=$this->db->query($sql);
+            return $results;
+  
+  
+            return true;
+  
+          }
+          catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+          }
+        }
       // FUNCTION OF UPDATING ATTENDEE
       public function updateAttendee($id,$fname,$lname,$dob,$number,$email,$pass,$avatar,$category ){
         try{
-              $sql = " UPDATE `attendee` SET `Attendee_id`=':attend',firstname`=':fname',`lastname`=':lname', `phone_number`=':nmber',`dateofbirth`=':dob',
-              `Email_address`=':email', `PASS`=':pass1', `Avatar`=':avatar',`Category`=':category' WHERE 
-               Attendee_id = :attend";
+              $sql = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`phone_number`=':nmber',`Email_address`=:email, `PASS`=':pass1' ,`Avatar`=':avatar',`Category`=':category WHERE Attendee_id = :attend ";
+              // $sql = " UPDATE `attendee` SET `Attendee_id`=':attend',firstname`=':fname',`lastname`=':lname', `phone_number`=':nmber',`dateofbirth`=':dob',`Email_address`=':email', `PASS`=':pass1', `Avatar`=':avatar',`Category`=':category' WHERE Attendee_id = :attend";
                  $stmt = $this->db->prepare($sql);
 
                 $stmt->bindparam(':attend', $id);
@@ -110,10 +146,11 @@ class crud
           }catch(PDOException $e){
                     echo  $e->getMessage();
                     return false;
-                      
+                       
          }
 
       }
+    
       public function getcategory(){
         try{
           $sql = "SELECT * FROM `category`;";

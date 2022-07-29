@@ -1,6 +1,8 @@
 <?php 
 require './includes/header.php';
 require './database/database.php';
+include_once './includes/auth-check.php';
+
 ?>
 <?php
 if(isset($_POST['submit'])){

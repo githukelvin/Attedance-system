@@ -1,4 +1,4 @@
-<?php include './includes/session.php';?>
+<?php include 'session.php';?>
 <!-- This file has session   -->
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attedance</title>
     <!--CUSTOM CSS-->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <!--FONTS GOOGLE CDN-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,18 +35,18 @@
                 <!-- <li><a href="<?php echo 'http://localhost/Attedance/'?>signin.php">signin</a></li> -->
                 
 
-                <li><a href="index.php">home</a></li>
-                <li><a href="about.php">about</a></li>
+                <li><a href="../index.php">home</a></li>
+                <li><a href="../about.php">about</a></li>
                 <!-- <li><a href="services.php">services</a></li> -->
-                <li><a href="contact.php">contact</a></li>
+                <li><a href="../contact.php">contact</a></li>
                 <div class="logs">
                     <?php
                     if(!isset($_SESSION['id'])){
                  ?>
-                <li><a href="signin.php">Sign In</a></li>
+                <li><a href="../signin.php">Sign In</a></li>
                 <?php }else{?>
                 <span style="display: inline-block;"><?php echo $_SESSION['username']?></span>
-                <li><a href="logout.php"> Sign Out</a></li>
+                <li><a href="../logout.php"> Sign Out</a></li>
 
                     <?php }?>
                 </div>
@@ -54,4 +54,11 @@
             </ul>
         </nav>
     </header>
-    <a href="admin/index.php" style="margin:2rem auto; background-color: #ffb703 ;padding:.5rem; width:fit-content;border-radius:8px; text-align:center; font-size:18px;">An Admin Log Here</a>
+    <aside class="aside">
+    <ul>
+        <li><a href="../index.php">Home</a></li>
+        <li><a href="account.php">Accounts</a></li>
+        <li><a href="../list.php">Signed</a></li>
+
+    </ul>
+ </aside>

@@ -3,12 +3,57 @@ $title = 'index';
 require_once './database/database.php';
  require 'includes/header.php';
  $carts = $crud->getcategory();
+
+ if(isset($_POST['submit'])){
+    //extract values in form in array
+    $fname = $_POST['first_name'];
+    $lname = $_POST['last_name'];
+    $dob = $_POST['date'];
+    $category = $_POST['select-number'];
+    $number = $_POST['number'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass1'];
+    $avatar = $_POST['avatar'];
+
+// call function to insert and track if succes or not
+
+    $isSuccess= $crud->insertAttendees ($fname,$lname,$dob,$number,$email,$pass,$avatar,$category) ;
+    if($isSuccess){
+    //   echo"<h1>Success</h1>";
+    // include './includes/Suc_message.php';
+    header('Location: signin.php');
+      
+    }
+    else{
+        // echo "<h1>Error occured</h1>";
+        include './includes/error.php';
+    }
+}
+if (isset($_POST['submit'])) {
+    //extract values in form in array
+ 
+    $username = $_POST['email'];
+    $Pass= $_POST['pass1'];
+    
+
+    // call function to insert and track if succes or not
+
+    $isSuccess= $users->insertuser($username,$Pass) ;
+    if ($isSuccess) {
+        //   echo"<h1>Success</h1>";
+    header('Location: signin.php');
+    // include './includes/Suc_message.php';
+    } else {
+        // echo "<h1>Error occured</h1>";
+        include './includes/error.php';
+    }
+}
  ?>
 
 <h1 class="reg">Registration For Student/Lecturer</h1>
 
 <div class="container form__container">
-    <form action="success.php" class="form" encrequired type="multipart/form-data" method="post">
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" class="form" encrequired type="multipart/form-data" method="post">
     <div class="form-group">
             <label for="first_name">First Name</label><br>
             <input required type="text" name="first_name" placeholder="Enter Your First Name" id="first_name">
@@ -55,7 +100,7 @@ require_once './database/database.php';
         <small>Already have an account <a href="./signin.php">Sign In</a></small>
         </div>
         <button class="btn" required type="submit" name="submit">Register</button>
-    </form>
+    </form>  
     
 
 </div>

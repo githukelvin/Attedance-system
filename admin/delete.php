@@ -1,5 +1,7 @@
 <?php
- require './database/database.php';
+ require '../database/database.php';
+  include_once 'auth-check.php';
+
 
 
 if(!$_GET['id']){

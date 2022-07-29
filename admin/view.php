@@ -1,8 +1,8 @@
 <?php  
 
-include  'includes/header.php';
-include 'database/database.php';
-include_once './includes/auth-check.php';
+include  'header.php';
+include '../database/database.php';
+include_once 'auth-check.php';
 
 
   
@@ -35,4 +35,4 @@ include_once './includes/auth-check.php';
  </div>       
             
 <?php } ?>
-<?php  include 'includes/footer.php'?>
+<?php  include 'footer.php'?>

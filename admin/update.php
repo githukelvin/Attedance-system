@@ -1,5 +1,7 @@
-<?php  include './includes/header.php';
-include './database/database.php' ;
+<?php  include 'header.php';
+include '../database/database.php' ;
+include_once 'auth-check.php';
+
 $carts = $crud->getcategory();
 
 if (!isset($_GET['id'])){
@@ -68,4 +70,4 @@ else{
 <?php
 }?>
 
-<?php include './includes/footer.php' ?>
+<?php include 'footer.php' ?>

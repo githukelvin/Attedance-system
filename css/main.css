@@ -82,7 +82,7 @@ footer .container__footer ul li a:hover {
   justify-content: center;
   flex-direction: column;
 }
-.form__container .form-group input, .form__container .form-group select {
+.form__container .form-group input, .form__container .form-group select, .form__container .form-group #textarea {
   margin-top: 0.2rem;
   border: none;
   background: #F9E4D4;
@@ -244,21 +244,12 @@ header {
   border-top: 20px solid #42eadc;
   border-right: 20px solid #42eadc;
 }
-@media(max-width:800px){
-  .container{
-  
-    width: 100%;
-  }
-
-    .form__container .form{
-      width:90%;
-      padding: 2rem;
-    }
-    .form__container .form-group{
-        width: 100%;
-      }
-   
-  }
-    
-  
-  /*# sourceMappingURL=main.css.map */
+.container__hero aside {
+  width: 20rem;
+  height: 30rem;
+  background: #2b2d42;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */

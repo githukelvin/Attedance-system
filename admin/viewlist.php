@@ -1,8 +1,9 @@
 <?php 
 $title = 'View Records';
-require_once 'database/database.php';
+require_once '../database/database.php';
 
-include 'includes/header.php';
+include 'header.php';
+include_once 'auth-check.php';
 // we call the result  we defined in  crud.php
 $results = $crud->getAttendees();
 
@@ -54,5 +55,5 @@ while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-<?php include 'includes/footer.php';?>
+<?php include 'footer.php';?>
 

@@ -1,5 +1,5 @@
-<?php require './includes/header.php';
-  require_once "./database/database.php";
+<?php require 'header.php';
+  require_once "../database/database.php";
 //   if form is submitted using post
 
 // $_SERVER['REQUEST_METHOD'] == 'POST'  used to  setup login authentication
@@ -7,17 +7,17 @@
      
     $username = strtolower(trim($_POST['username']));
     $password = $_POST['Pass'];
-    $new_password = md5($password);
+    // $new_password = md5($password);
 
-    $results= $users->getuser($username,$new_password);
+    $result= $users->getuseradmin($username,$password);
 
-    if(!$results){
+    if(!$result){
         echo"<h1 style='margin:2rem auto; background-color: #FF6363; padding:.5rem; width:fit-content;border-radius:8px; text-align:center; font-size:18px;'>Details Don't Match</h1>";
     }
     else{
         $_SESSION['username']= $username;
-        $_SESSION['id']= $results['user_id'];
-        header('Location: attended.php');
+        $_SESSION['id']= $result['admin_id'];
+        header('Location: viewlist.php');
     }
     // echo "<h1>$username your Password is  $new_password</h1>";
 
@@ -29,7 +29,7 @@
   
   
   ?>
-<h1 class="reg">Login</h1>
+<h1 class="reg">admin Login</h1>
 <div class="container form__container">
     <form  action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" class="form" encrequired type="multipart/form-data" method="POST">
    
@@ -56,4 +56,4 @@
     
 </div>
 
-<?php require'./includes/footer.php'?>
+<?php require'footer.php'?>
