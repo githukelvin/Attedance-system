@@ -15,6 +15,7 @@ class crud
 
             try {
                 // define sql statement to be excuted
+                $pass = md5($pass);
                 $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,phone_number,Email_address,PASS,Avatar,Category) VALUES (:fname,:lname,:dob,:nmber,:email,:pass,:avatar,:category)";
                 // prepare the sql statement for exuction
                 $stmt = $this->db->prepare($sql);

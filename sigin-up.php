@@ -15,6 +15,8 @@ require_once './database/database.php';
     $pass = $_POST['pass1'];
     $avatar = $_POST['avatar'];
 
+
+
 // call function to insert and track if succes or not
 
     $isSuccess= $crud->insertAttendees ($fname,$lname,$dob,$number,$email,$pass,$avatar,$category) ;
@@ -22,6 +24,7 @@ require_once './database/database.php';
     //   echo"<h1>Success</h1>";
     // include './includes/Suc_message.php';
     header('Location: signin.php');
+    
       
     }
     else{
@@ -94,7 +97,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form-group">
             <label for="avatar">Enter Address</label></label><br>
-          <input  type="text" name="avatar" id="avatar">
+          <input  type="text" name="avatar" placeholder="Where do you stay" id="avatar">
         </div>
         <div class="forgot">
         <small>Already have an account <a href="./signin.php">Sign In</a></small>
