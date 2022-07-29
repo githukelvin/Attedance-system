@@ -1,23 +1,23 @@
 <?php
 // LOCAL DEVELOPMENT
-    $host = '127.0.0.1';
+    // $host = '127.0.0.1';
 
-    $db= 'attedance_db';
+    // $db= 'attedance_db';
 
 
-    $user='root';
-    $pass ='';
-    $charset= 'utf8mb4';
+    // $user='root';
+    // $pass ='';
+    // $charset= 'utf8mb4';
 
     //REMOTE DATABASE CONNECTION
-    // $host = 'remotemysql.com';
+    $host = 'remotemysql.com';
 
-    // $db= '2SAU0pxmFM';
+    $db= '2SAU0pxmFM';
 
 
-    // $user='2SAU0pxmFM';
-    // $pass ='k7EnFkwp2y';
-    // $charset= 'utf8mb4';
+    $user='2SAU0pxmFM';
+    $pass ='k7EnFkwp2y';
+    $charset= 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

@@ -20,6 +20,6 @@
    </div>
 </div>
 
-<a style="padding: 1rem ; background:peachpuff; border-radius:10px; position:relative;top:-10rem;left:10rem;" href="<?php echo 'http://localhost/Attedance/'?>viewlist.php" class="btn" >Viewlist</a>
+<!-- <a style="padding: 1rem ; background:peachpuff; border-radius:10px; position:relative;top:-10rem;left:10rem;" href="<?php echo 'http://localhost/Attedance/'?>viewlist.php" class="btn" >Viewlist</a> -->
 
 <?php require'./includes/footer.php'?>
